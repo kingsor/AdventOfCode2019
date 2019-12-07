@@ -27,13 +27,13 @@ namespace Day1
                 var mass = Convert.ToInt32(val);
                 var fuel = (int)Math.Floor((double)mass / 3) - 2;
 
-                //Console.WriteLine("mass: {0} - fuel {1}", mass, fuel);
+                Console.WriteLine("mass: {0} - fuel {1}", mass, fuel);
 
                 fuelSum += fuel;
                 numModules++;
             }
 
-            Console.WriteLine("Fuel requirements for {0} modules: {1}", numModules, fuelSum);
+            Console.WriteLine("PuzzleOne: Fuel requirements for {0} modules: {1}", numModules, fuelSum);
         }
 
         static void PuzzleTwo()
@@ -59,13 +59,15 @@ namespace Day1
                 //    break;
             }
 
-            Console.WriteLine("Fuel requirements for {0} modules: {1}", numModules, fuelSum);
+            Console.WriteLine("PuzzleTwo: Fuel requirements for {0} modules: {1}", numModules, fuelSum);
         }
 
         static int CalculateFuel(int mass)
         {
             var fuel = (int)Math.Floor((double)mass / 3) - 2;
-            if(fuel > 0)
+            Console.WriteLine("CalculateFuel: mass: {0} - fuel {1}", mass, fuel);
+
+            if (fuel > 0)
             {
                 fuel += CalculateFuel(fuel);
             }
